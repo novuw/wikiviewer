@@ -2,6 +2,7 @@
 <html>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Muli&effect=3d" rel="stylesheet">
+<link href="styles.css" type="text/css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
     <meta charset= "UTF-8">
@@ -18,7 +19,7 @@ $(document).ready(function(){
         var searchQuery = document.getElementById('myForm').value.match(/\s/gi).replace("_");
         function setEqual(searchQuery){
             console.log(searchQuery);
-            $.ajax({
+            /*$.ajax({
                     url: "http://en.wikipedia.org/w/api.php",
                     type: "GET",
                     format: "jsonp",
@@ -32,54 +33,13 @@ $(document).ready(function(){
                         alert("Error!");
                     }
 
-            });
+            });*/
         };
 
     });
 });
 </script>
 <style>
-body{
-    background: black;
-}
-h1{
-    text-align: center;
-    color: white;
-    font-family: Muli;
-}
-input[type=text]{
-    width: 115px;
-    border: 2px solid #ccc;
-    border-radius: 25px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png');
-    background-size: 25px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-input[type=text]:focus {
-    width: 30%;
-    outline: none;
-}
-h3{
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    color: white;
-    font-size: 16px;
-    font-family: Muli;
-}
-input[type="submit"]{
-    background-color: white;
-    border: 2px solid #ccc;
-    font-size: 12px;
-    font-family: Muli;
-    border-radius: 25px;
-}
 </style>
     <center><a href="https://en.wikipedia.org/wiki/Main_Page"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm/220px--Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm.jpg"></a></center>
     <h1>Wikimedia Viewer</h1>
