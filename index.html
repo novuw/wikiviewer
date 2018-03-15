@@ -4,52 +4,27 @@
 <link href="https://fonts.googleapis.com/css?family=Muli&effect=3d" rel="stylesheet">
 <link href="styles.css" type="text/css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <head>
     <meta charset= "UTF-8">
     <title>Wiki Viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> Used to prevent browser caching -->
 </head>
-<script>
-$(document).ready(function(){
-    function successfulRequest(jsonp){
-
-    };
-    $("#myForm").submit(function(searchQuery){
-        var searchQuery = document.getElementById('myForm').value.match(/\s/gi).replace("_");
-        function setEqual(searchQuery){
-            console.log(searchQuery);
-            /*$.ajax({
-                    url: "http://en.wikipedia.org/w/api.php",
-                    type: "GET",
-                    format: "jsonp",
-                    data: {
-                        'action': "opensearch",
-                        'format': "jsonp",
-                        'search': query.term
-                    },
-                    success: successfulRequest,
-                    error: function(jsonp){
-                        alert("Error!");
-                    }
-
-            });*/
-        };
-
-    });
-});
-</script>
-<style>
-</style>
-    <center><a href="https://en.wikipedia.org/wiki/Main_Page"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm/220px--Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm.jpg"></a></center>
-    <h1>Wikimedia Viewer</h1>
-    <form style="text-align: center" id="myForm">
-        <input type="text" name="search" placeholder="Search" autocomplete="off">
-    </br></br><input type="submit">
-    </form>
+<html>
+<center><a href="https://en.wikipedia.org/wiki/Main_Page"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm/220px--Wikipedia_logo_puzzle_globe_spins_horizontally_and_vertically%2C_revealing_the_contents_of_all_of_its_puzzle_pieces_%284K_resolution%29_%28VP9%29.webm.jpg"></a></center>
+<h1>Wikimedia Viewer</h1>
+        <div>
+            <center>
+            <input id="searchQuery" placeholder="Search">
+        </br>
     </br>
-    <form action="https://en.wikipedia.org/wiki/Special:Random" target="blank>_blank" style="text-align: center">
-        <input class="btn" type="submit" value="I'm Feeling Lucky">
-    </form>
-    <h3>Made by: Elijah Harbut</h3>
+            <button id="searchButton" class="btn"><img src='http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png' width="10px"></button>
+        </center>
+        </div>
+</form>
+</br>
+<form action="https://en.wikipedia.org/wiki/Special:Random" target="blank_blank" style="text-align: center">
+    <input class="btn" type="submit" value="I'm Feeling Lucky">
+</form>
+<h3>Made by: Elijah Harbut</h3>
 </html>

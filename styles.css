@@ -6,24 +6,6 @@ h1{
     color: white;
     font-family: Muli;
 }
-input[type=text]{
-    width: 115px;
-    border: 2px solid #ccc;
-    border-radius: 25px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png');
-    background-size: 25px;
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-input[type=text]:focus {
-    width: 30%;
-    outline: none;
-}
 h3{
     position: absolute;
     right: 0px;
@@ -43,11 +25,11 @@ input:focus {
     outline: none;
 }
 <!--                                        -->
-#SearchCont, #searchQuery input {
+#SearchButton, #searchQuery input{
     display: inline;
 }
 input[id="searchQuery"] {
-    padding: 12px 20px 12px 40px;
+    padding: 12px 20px 12px 30px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     width: 115px;
@@ -57,9 +39,10 @@ input[id="searchQuery"] {
     background-color: white;
 }
 input[id="searchQuery"]:focus {
-    width: 30%;
+    width: 20%;
     outline: none;
 }
-.fa-search {
-    right: 40px;
+#searchButton{
+    background-color: white;
+    position: ;
 }
