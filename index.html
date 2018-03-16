@@ -9,10 +9,9 @@ $(document).ready(function(){
     $('#searchButton').on('click', function(){
         var searchQuery = document.getElementById('searchQuery').value;
         console.log(searchQuery);
-
-
-
-
+    });
+    $('clearSearch').on('click', function(){
+        document.forms["searchField"].reset();
     });
 });
 
@@ -27,15 +26,17 @@ $(document).ready(function(){
 <h1>Wikimedia Viewer</h1>
         <div>
             <center>
-            <input id="searchQuery" placeholder="Search">
-        </br>
-    </br>
-
+                <div>
+                    <form>
+                <input type="text" action="#" id="searchQuery" placeholder="Search">
+                <button type="reset" id="clearSearch" class="btn parent"><img src='http://cdns2.freepik.com/free-photo/x-mark_318-1500.jpg' width="10px"></button>
+            </form>
             <form action="https://en.wikipedia.org/wiki/Special:Random" target="blank_blank">
-                <button type="button" id="clearSearch" class="btn parent"><img src='http://cdns2.freepik.com/free-photo/x-mark_318-1500.jpg' width="20px"></button>
-                <button type="button" id="searchButton" class="btn parent"><img src='http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png' width="20px"></button>
+            </br>
+            <button type="button" id="searchButton" class="btn parent"><img src='http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png' width="20px"></button>
                 <input class="btn parent" type="submit" value="I'm Feeling Lucky">
             </form>
+        </div>
         </center>
         </div>
 </br>

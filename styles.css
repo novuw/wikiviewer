@@ -46,7 +46,8 @@ input[id="searchQuery"]:focus {
 }
 #clearSearch{
     background-color: white;
-    position: ;
+    border-radius: 25px;
+    border: 2px solid #ccc;
 }
 .parent{
     display: inline;
