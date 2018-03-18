@@ -1,7 +1,7 @@
 body{
     background: black;
 }
-h1{
+h1, #info {
     text-align: center;
     color: white;
     font-family: Muli;
@@ -17,6 +17,7 @@ h3{
 input[type="submit"]{
     background-color: white;
     font-family: Muli;
+    border: 2px solid #ccc;
 
 }
 input:focus {
@@ -43,11 +44,13 @@ input[id="searchQuery"]:focus {
 #searchButton{
     background-color: white;
     position: ;
+    border: 2px solid #ccc;
 }
 #clearSearch{
     background-color: white;
     border-radius: 25px;
     border: 2px solid #ccc;
+    outline: none;
 }
 .parent{
     display: inline;

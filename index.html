@@ -6,9 +6,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+    function mySuccess(jsonp){
+        console.log(jsonp);
+        $('#info').html();
+        for(var i = 0; i < jsonp[1].length; i++){
+            $('#info').prepend();
+        }
+    }
     $('#searchButton').on('click', function(){
         var searchQuery = document.getElementById('searchQuery').value;
-        console.log(searchQuery);
+        var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + searchQuery + "&format=json&callback=?";
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: 'jsonp',
+            success: mySuccess,
+            error: function(jsonp){
+                alert('error!');
+            }
+        });
     });
     $('clearSearch').on('click', function(){
         document.forms["searchField"].reset();
@@ -39,6 +55,9 @@ $(document).ready(function(){
         </div>
         </center>
         </div>
+    </br>
+    <div class="info">
+    </div>
 </br>
 <h3>Made by: Elijah Harbut</h3>
 </html>
