@@ -60,13 +60,16 @@ input[id="searchQuery"]:focus {
 }
 .infoTitle{
     text-align: center;
-    color: black;
+    color: white;
     font-family: Muli;
     font-size: 30px;
 }
 .infoBody{
     text-align: center;
-    color: black;
+    color: white;
     font-family: Muli;
     font-size: 16px;
+}
+.linky{
+    color: white;
 }

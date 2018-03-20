@@ -12,8 +12,8 @@ $(document).ready(function(){
             var informationTitles = jsonp[1][i];
             var informationBodies = jsonp[2][i];
             var informationLink = jsonp[3][i];
-            $('#informationFile').addClass('well');
-            $('#informationFile').append('<h4 class="infoTitle">'+informationTitles+'</h4></br><h4 class="infoBody">'+informationBodies+'</h4></br><a class="linky" href="">Go to the site</a>');
+            //$('#informationFile').addClass('well');
+            $('#informationFile').append('<h4 class="infoTitle">'+informationTitles+'</h4></br><h4 class="infoBody">'+informationBodies+'</h4></br><a target="_blank" class="linky" href='+informationLink+'>Wikipedia Entry</a>');
 
         }
      }
@@ -32,6 +32,7 @@ $(document).ready(function(){
     });
     $('clearSearch').on('click', function(){
         document.forms["searchField"].reset();
+        $('#informationFile').empty();
     });
     $("#id_of_textbox").keydown(function(event) {
     if (event.keyCode === 13) {
