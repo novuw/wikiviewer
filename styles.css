@@ -24,7 +24,7 @@ input:focus {
     outline: none;
 }
 <!--                                        -->
-#searchButton, #searchQuery input{
+#searchButton, #searchQuery, #reloader input{
     display: inline;
 }
 input[id="searchQuery"] {
@@ -72,4 +72,10 @@ input[id="searchQuery"]:focus {
 }
 .linky{
     color: white;
+}
+#reloader {
+    background-color: white;
+    position: ;
+    border: 2px solid #ccc;
+    outline: none;
 }
