@@ -13,7 +13,7 @@ $(document).ready(function(){
             var informationBodies = jsonp[2][i];
             var informationLink = jsonp[3][i];
             //$('#informationFile').addClass('well');
-            $('#informationFile').append('<h4 class="infoTitle">'+informationTitles+'</h4></br><h4 class="infoBody">'+informationBodies+'</h4></br><a target="_blank" class="linky" href='+informationLink+'>Wikipedia Entry</a>');
+            $('#informationFile').append('<h4 class="infoTitle">'+informationTitles+'</h4></br><h4 class="infoBody">'+informationBodies+'</h4></br><a target="_blank" class="linky" href='+informationLink+'>Wikipedia Entry</a></br>');
 
         }
      }
@@ -30,17 +30,26 @@ $(document).ready(function(){
             }
         });
     });
+    $("#searchTerm").keypress(function(e){
+    	if(e.keyCode == 13){
+            var searchQuery = document.getElementById('searchQuery').value;
+            var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + searchQuery + "&format=json&callback=?";
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: 'jsonp',
+                success: mySuccess,
+                error: function(jsonp){
+                    alert('error!');
+                }
+            });
+        }
+    });
     $('clearSearch').on('click', function(){
         document.forms["searchField"].reset();
         $('#informationFile').empty();
     });
-    $("#id_of_textbox").keydown(function(event) {
-    if (event.keyCode === 13) {
-        $("#searchButton").click();
-        }
-    });
 });
-
 </script>
 <head>
     <meta charset= "UTF-8">
@@ -54,14 +63,14 @@ $(document).ready(function(){
             <center>
                 <div>
                     <form>
-                <input type="text" action="#" id="searchQuery" placeholder="Search">
+                <input onkeypress="return event.keyCode != 13;" id="searchQuery" name="searchBox" placeholder="Search">
                 <button type="reset" id="clearSearch" class="btn parent"><img src='http://cdns2.freepik.com/free-photo/x-mark_318-1500.jpg' width="10px"></button>
             </form>
             <form action="https://en.wikipedia.org/wiki/Special:Random" target="blank_blank">
             </br>
             <button type="button" id="searchButton" class="btn parent"><img src='http://downloadicons.net/sites/default/files/system-of--magnifying-glass-icon-73291.png' width="20px"></button>
             <input class="btn parent" type="submit" value="I'm Feeling Lucky">
-            <input type="button" class="btn parent" id="reloader" value="Refresh Page" onClick="window.location.reload()">    
+            <input type="button" class="btn parent" id="reloader" value="Refresh Page" onClick="window.location.reload()">
             </form>
         </div>
         </center>
