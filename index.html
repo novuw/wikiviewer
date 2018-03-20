@@ -13,10 +13,7 @@ $(document).ready(function(){
             var informationBodies = jsonp[2][i];
             var informationLink = jsonp[3][i];
             $('#informationFile').addClass('well');
-            $('#informationFile').append('<h4 class="infoTitle"></h4></br><h4 class="infoBody"></h4></br><a class="linky" href="">Go to the site</a>');
-            $('#infoTitle').text(informationTitles);
-            $('#infoBody').text(informationBodies);
-            $('.linky').attr("href", informationLink);
+            $('#informationFile').append('<h4 class="infoTitle">'+informationTitles+'</h4></br><h4 class="infoBody">'+informationBodies+'</h4></br><a class="linky" href="">Go to the site</a>');
 
         }
      }
