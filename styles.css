@@ -24,7 +24,7 @@ input:focus {
     outline: none;
 }
 <!--                                        -->
-#SearchButton, #searchQuery input{
+#searchButton, #searchQuery input{
     display: inline;
 }
 input[id="searchQuery"] {
@@ -54,4 +54,19 @@ input[id="searchQuery"]:focus {
 }
 .parent{
     display: inline;
+}
+.well{
+    background-color: #ffffff;
+}
+.infoTitle{
+    text-align: center;
+    color: black;
+    font-family: Muli;
+    font-size: 30px;
+}
+.infoBody{
+    text-align: center;
+    color: black;
+    font-family: Muli;
+    font-size: 16px;
 }

@@ -8,11 +8,18 @@
 $(document).ready(function(){
     function mySuccess(jsonp){
         console.log(jsonp);
-        $('#info').html();
         for(var i = 0; i < jsonp[1].length; i++){
-            $('#info').prepend();
+            var informationTitles = jsonp[1][i];
+            var informationBodies = jsonp[2][i];
+            var informationLink = jsonp[3][i];
+            $('#informationFile').addClass('well');
+            $('#informationFile').append('<h4 class="infoTitle"></h4></br><h4 class="infoBody"></h4></br><a class="linky" href="">Go to the site</a>');
+            $('#infoTitle').text(informationTitles);
+            $('#infoBody').text(informationBodies);
+            $('.linky').attr("href", informationLink);
+
         }
-    }
+     }
     $('#searchButton').on('click', function(){
         var searchQuery = document.getElementById('searchQuery').value;
         var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + searchQuery + "&format=json&callback=?";
@@ -28,6 +35,11 @@ $(document).ready(function(){
     });
     $('clearSearch').on('click', function(){
         document.forms["searchField"].reset();
+    });
+    $("#id_of_textbox").keydown(function(event) {
+    if (event.keyCode === 13) {
+        $("#searchButton").click();
+        }
     });
 });
 
@@ -56,8 +68,11 @@ $(document).ready(function(){
         </center>
         </div>
     </br>
-    <div class="info">
+    <center>
+    <div id="informationFile" class="info">
+
     </div>
+</center>
 </br>
 <h3>Made by: Elijah Harbut</h3>
 </html>
